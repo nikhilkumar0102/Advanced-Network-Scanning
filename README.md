@@ -49,3 +49,99 @@ To use this repository:
    ```bash
    git clone https://github.com/yourusername/Advanced-Network-Scanning.git
    cd Advanced-Network-Scanning
+
+2. **Ensure tools are installed**
+   ```bash
+   sudo apt install nmap netdiscover xsltproc
+   
+3. **Run your first scan**
+   ```bash
+   sudo nmap -sS -p- -v ip_address
+
+## 🔧 Scanning Techniques
+The reposity covers:
+- TCP Connect `(-sT)`
+- Stealth (SYN Scan) `(-sS)`
+- Version Detection `(-sV)`
+- OS Detection `(-O)`
+- Aggressive Scans `(-A)`
+- Null `(-sN)`, Xmas `(-sX)`, and Fragmentation scans for stealth `(-f)`
+- Fast Scans `(-F)`
+- Subnet-wide scans `(-sn)`
+
+Detailed documentation is in:
+📄 [docs/03_Scanning_Techniques.md](docs/03_Scanning_Techniques.md)
+
+
+## 🧱 Firewall Bypass Methods
+Learn how to evade detection by:
+
+-   Randomizing hosts `(--randomize-hosts)`
+-    Decoy scanning `(-D)`
+-    MAC spoofing `(--spoof-mac)`
+-    Source port spoofing `(--source-port)`
+-    IP spoofing `(-S)`
+-    Fragmentation and null scans
+
+See:
+📄 [docs/04_Bypass_Techniques.md](docs/04_Bypass_Techniques.md)
+
+## 📜 Script Usage & Output
+
+- Default and custom Nmap scripts `(.nse)`
+- FTP, SMTP enumeration
+- NSE script execution for specific ports
+- Output in XML `(-oX)` and conversion to HTML using `xsltproc`
+
+See:
+📄 [docs/05_Scripts_and_Examples.md](docs/05_Scripts_and_Examples.md)
+
+**Example**
+```bash
+   nmap 192.168.1.1 -p- -sC -sV -oX example.xml
+   xsltproc example.xml -o example.html
+```
+
+## 🛡️ Denial of Service Tests
+Test ICMP-based DoS resistance:
+- Packet size manipulation `(ping -s 1000)`
+- Preventing fragmentation `(-M do)`
+- TTL analysis for OS fingerprinting
+
+See:
+📄 [docs/06_DOS_Attacks.md](docs/06_Dos_and_Attacks.md)
+
+## 📂 Repository Structure
+
+## Repository Structure
+
+```plaintext
+Advanced-Network-Scanning/
+│
+├── README.md
+├── docs/
+│   ├── 01_Introduction.md
+│   ├── 02_Tools.md
+│   ├── 03_Scanning_Techniques.md
+│   ├── 04_Bypass_Techniques.md
+│   ├── 05_Scripts_and_Examples.md
+│   ├── 06_DOS_Attacks.md
+│   └── images/               # Screenshots and diagrams
+├── reports/
+│   ├── example.xml
+│   └── example.html
+└── scripts/
+    └── custom NSE or bash scripts
+```
+## ⚠️ Legal Disclaimer
+
+This repository is intended for educational and ethical penetration testing purposes only.  
+Unauthorized scanning or attacks on networks you do not own or have explicit permission to test is illegal and unethical.  
+Always ensure you have proper authorization before performing any network reconnaissance.
+
+## 🧠 **Contributions**  
+Contributions are welcome! Feel free to:  
+- Add new techniques  
+- Improve documentation  
+- Include screenshots  
+- Suggest best practices
