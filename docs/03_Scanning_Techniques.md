@@ -15,6 +15,7 @@ nmap -sT -p1-65535 -v 192.168.1.1
 -p1-65535: Scan all 65535 ports
 
 -v: Verbose output
+```
 
 ⚠️ Detectable by firewalls and IDS due to full handshake.
 
