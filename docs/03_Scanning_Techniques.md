@@ -13,12 +13,12 @@ This scan uses a full TCP connection (three-way handshake). It is easily detecta
 ![docs](images/syn_scan.png)
 ```bash
 nmap -sT -p1-65535 -v 192.168.1.7
--sT: TCP connect scan
-
--p1-65535: Scan all 65535 ports
-
--v: Verbose output
 ```
+`-sT` : TCP connect scan
+
+`-p1-65535/-p-` : Scan all ports
+
+`-v` : Verbose output (Internal details of scans)
 
 
 ⚠️ Detectable by firewalls and IDS due to full handshake.
@@ -26,10 +26,12 @@ nmap -sT -p1-65535 -v 192.168.1.7
 ## 2️⃣ Stealth (Half-Open) Scan (-sS)
 Avoids full TCP handshake. Often used to bypass firewalls and avoid detection.
 
+
 ```bash
 nmap -sS -p1-65535 -v 192.168.1.1
--sS: Stealth SYN scan
 ```
+`-sS` : Stealth SYN scan
+
 No complete handshake, avoids basic firewalls
 
 ✅ Useful for penetration tests.
@@ -39,107 +41,103 @@ Determines service version running on open ports.
 
 ```bash
 nmap -sV -p- -v 192.168.1.1
--sV: Service version detection
 ```
--p-: All ports
+`-sV` : Service Version detection
+
+`-p-` : All ports
 
 Example: Detects Apache 2.4.29 or OpenSSH 7.6
 
-4️⃣ Operating System Detection (-O)
+## 4️⃣ Operating System Detection (-O)
 Tries to guess the OS based on TCP/IP fingerprinting.
 
-bash
-Copy code
-nmap -sS -O -p- -v 192.168.1.1
--O: OS detection
+```bash
+nmap -sS -O -p- -v 192.168.1.7
+```
+`-O` : OS detection
 
-ℹ️ Requires root privileges.
+**ℹ️ Requires root privileges.**
 
-5️⃣ Default Script Scan (-sC)
+## 5️⃣ Default Script Scan (-sC)
 Runs common NSE (Nmap Scripting Engine) scripts against services.
 
-bash
-Copy code
-nmap -sC -sV -p- -oX example.xml 192.168.1.1
--sC: Run default scripts
+```bash
+nmap -sC -sV -p- -oX example.xml 192.168.1.7
+```
+**-sC: Run default scripts
+-sV: Service Detection
+-oX: Save results in XML format**
 
--sV: Service detection
-
--oX: Save results in XML format
-
-To convert the XML report to HTML:
-
-bash
-Copy code
+**To convert the XML report to HTML:**
+```bash
 xsltproc example.xml -o example.html
-6️⃣ Aggressive Scan (-A)
+```
+
+## 6️⃣ Aggressive Scan (-A)
 Performs OS detection, version detection, script scanning, and traceroute.
 
-bash
-Copy code
-nmap -A -p- -v 192.168.1.1
-Combines multiple scans
+```bash
+nmap -A -p- -v 192.168.1.7
+```
+- Combines multiple scans
+- Can be noisy and slow
 
-Can be noisy and slow
-
-7️⃣ Null Scan (-sN)
+## 7️⃣ Null Scan (-sN)
 Sends packets with no TCP flags set. Useful for firewall evasion.
 
-bash
-Copy code
-nmap -sN -v -p- 192.168.1.1
--sN: Null scan
+```bash
+nmap -sN -v -p- 192.168.1.7
+```
+**-sN: Null Scan**
 
 No flags → Stealthy
-
 ✔️ No response = Port open
 ❌ RST = Port closed
 
-8️⃣ Fragmentation Scan (-f)
+## 8️⃣ Fragmentation Scan (-f)
 Breaks probe packets into tiny fragments to bypass firewalls/IDS.
 
-bash
-Copy code
-nmap -f -v -p- 192.168.1.1
+```bash
+nmap -f -v -p- 192.168.1.7
+```
 🧩 Obfuscates packet content.
 
-9️⃣ Custom MTU Scan (--mtu)
+##9️⃣ Custom MTU Scan (--mtu)
 Sets the Maximum Transmission Unit for probes.
 
-bash
-Copy code
-nmap --mtu=15 -v -p- 192.168.1.1
-🔬 Helps evade some firewalls with MTU anomalies.
+```bash
+nmap --mtu=15 -v -p- 192.168.1.7
+```
+**🔬 Helps evade some firewalls with MTU anomalies.**
 
-🔟 Fast Scan (-F)
+## 🔟 Fast Scan (-F)
 Scans fewer ports (about 100 well-known ones).
 
-bash
-Copy code
-nmap -F -v -sV 192.168.1.1
-⚡ Fast but limited results.
+```bash
+nmap -F -v -sV 192.168.1.7
+```
+**⚡ Fast but limited results.**
 
-🅿️ No Ping Scan (-Pn)
-Skips host discovery. Useful when ICMP is blocked.
+**🅿️ No Ping Scan (-Pn)**
+- Skips host discovery. Useful when ICMP is blocked.
 
-bash
-Copy code
-nmap -Pn -v -p80 192.168.1.1
+```bash
+nmap -Pn -v -p80 192.168.1.7
+```
 ✅ Ensures scanning even if ICMP echo is filtered.
 
-🔁 Ping Scan Only (-sn)
+**🔁 Ping Scan Only (-sn)**
 Scans for live hosts in a subnet without port scanning.
 
-bash
-Copy code
+```bash
 nmap -sn -v 192.168.1.0/24
+```
 🧭 Good for mapping active hosts.
 
-✅ TTL-Based OS Detection (via Ping)
+**✅ TTL-Based OS Detection (via Ping)**
 Using ping TTL value to guess OS:
-
-text
-Copy code
-TTL 64   ➜ Likely Linux  
-TTL 128  ➜ Likely Windows  
-TTL 254  ➜ Likely Solaris
+```
+TTL (64)   ➜ Likely Linux  
+TTL (128)  ➜ Likely Windows  
+TTL (254)  ➜ Likely Solaris
+```
