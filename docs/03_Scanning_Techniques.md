@@ -78,6 +78,12 @@ nmap -sC -sV -p- -oX example.xml 192.168.1.7
 `-oX` : Save results in XML format
 
 **To convert the XML report to HTML:**
+
+![Xml-Html](/docs/image/XML_to_HTML)
+
+- Local hosted html webpage of name example.html with all the details about the ip address.
+
+![XML-Html](/docs/image/Nmap_HTML)
 ```bash
 xsltproc example.xml -o example.html
 ```
