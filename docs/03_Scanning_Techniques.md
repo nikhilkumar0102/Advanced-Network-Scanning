@@ -65,13 +65,17 @@ nmap -sS -O -p- -v 192.168.1.7
 
 ## 5️⃣ Default Script Scan (-sC)
 Runs common NSE (Nmap Scripting Engine) scripts against services.
-
+![Script Scan](/docs/image/Script_Scan.png)
+![Script Scan](/docs/image/Script_Scan_1.png)
+![Script Scan](/docs/image/Script_Scan_2.png)
 ```bash
 nmap -sC -sV -p- -oX example.xml 192.168.1.7
 ```
-**-sC: Run default scripts
--sV: Service Detection
--oX: Save results in XML format**
+`-sC` : Run default scripts
+
+`-sV` : Service Detection
+
+`-oX` : Save results in XML format
 
 **To convert the XML report to HTML:**
 ```bash
@@ -81,6 +85,11 @@ xsltproc example.xml -o example.html
 ## 6️⃣ Aggressive Scan (-A)
 Performs OS detection, version detection, script scanning, and traceroute.
 
+![Aggressive Scan](/docs/image/Aggresive_scan.png)
+![Aggressive Scan](/docs/image/Aggresive_scan_1.png)
+![Aggresive Scan](/docs/image/Aggresive_scan_2.png)
+![Aggresive Scan](/docs/image/Aggresive_scan_3.png)
+![Aggresive Scan](/docs/image/Aggresive_scan_4.png)
 ```bash
 nmap -A -p- -v 192.168.1.7
 ```
