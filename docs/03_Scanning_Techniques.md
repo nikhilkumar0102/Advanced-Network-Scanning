@@ -117,6 +117,9 @@ No flags → Stealthy
 ## 8️⃣ Fragmentation Scan (-f)
 - A fragmented scan in Nmap is used for stealth and evasion — it's a technique to bypass firewalls, intrusion detection systems (IDS), or intrusion prevention systems (IPS) that analyze and block suspicious network traffic.
 
+![Frag](/docs/image/Frag_Scan.png)
+
+![Frag](/docs/image/Frag_Scan_1.png)
 ```bash
 nmap -f -v -p- 192.168.1.7
 ```
