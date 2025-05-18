@@ -8,8 +8,10 @@ This section explores various network scanning techniques using `nmap`. Each tec
 
 This scan uses a full TCP connection (three-way handshake). It is easily detectable but very reliable.
 
+**Metasploitable Machine**
+
 ```bash
-nmap -sT -p1-65535 -v 192.168.1.1
+nmap -sT -p1-65535 -v 192.168.1.7
 -sT: TCP connect scan
 
 -p1-65535: Scan all 65535 ports
@@ -17,28 +19,27 @@ nmap -sT -p1-65535 -v 192.168.1.1
 -v: Verbose output
 ```
 
+
 ⚠️ Detectable by firewalls and IDS due to full handshake.
 
-2️⃣ Stealth (Half-Open) Scan (-sS)
+## 2️⃣ Stealth (Half-Open) Scan (-sS)
 Avoids full TCP handshake. Often used to bypass firewalls and avoid detection.
 
-bash
-Copy code
+```bash
 nmap -sS -p1-65535 -v 192.168.1.1
 -sS: Stealth SYN scan
-
+```
 No complete handshake, avoids basic firewalls
 
 ✅ Useful for penetration tests.
 
-3️⃣ Version Detection (-sV)
+## 3️⃣ Version Detection (-sV)
 Determines service version running on open ports.
 
-bash
-Copy code
+```bash
 nmap -sV -p- -v 192.168.1.1
 -sV: Service version detection
-
+```
 -p-: All ports
 
 Example: Detects Apache 2.4.29 or OpenSSH 7.6
