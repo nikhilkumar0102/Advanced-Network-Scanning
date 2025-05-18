@@ -27,7 +27,7 @@ Generates fake IP addresses as decoys to hide the real source IP of the scanner.
 ```bash
 nmap -D RND:10 -v 192.168.1.7
 ```
-- RND:10: Nmap will use 10 random IPs as decoys.
+- `RND:10` : Nmap will use 10 random IPs as decoys.
 - Real IP gets `"lost"` among decoys.
 - Useful to evade logging and attribution.
 
