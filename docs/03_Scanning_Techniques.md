@@ -10,7 +10,8 @@ This scan uses a full TCP connection (three-way handshake). It is easily detecta
 
 **Metasploitable Machine**
 
-![docs](images/syn_scan.png)
+![TCP Scan](/docs/image/TCP_Scan.png)
+
 ```bash
 nmap -sT -p1-65535 -v 192.168.1.7
 ```
@@ -26,6 +27,7 @@ nmap -sT -p1-65535 -v 192.168.1.7
 ## 2️⃣ Stealth (Half-Open) Scan (-sS)
 Avoids full TCP handshake. Often used to bypass firewalls and avoid detection.
 
+![Stealth Scan](/docs/image/Stealth_Scan.png)
 
 ```bash
 nmap -sS -p1-65535 -v 192.168.1.1
@@ -38,6 +40,7 @@ No complete handshake, avoids basic firewalls
 
 ## 3️⃣ Version Detection (-sV)
 Determines service version running on open ports.
+![Version Scan](/docs/image/Version_Scan.png)
 
 ```bash
 nmap -sV -p- -v 192.168.1.1
@@ -50,6 +53,8 @@ Example: Detects Apache 2.4.29 or OpenSSH 7.6
 
 ## 4️⃣ Operating System Detection (-O)
 Tries to guess the OS based on TCP/IP fingerprinting.
+
+![OS Scan](/docs/image/OS_Scan.png)
 
 ```bash
 nmap -sS -O -p- -v 192.168.1.7
