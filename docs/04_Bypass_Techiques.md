@@ -11,7 +11,7 @@ In secured environments, firewalls and Intrusion Detection Systems (IDS/IPS) may
 Xmas scans set **FIN, URG, and PUSH** TCP flags in packets — resembling a "blinking Christmas tree".
 
 ```bash
-nmap -sX -v 192.168.1.1
+nmap -sX -v 192.168.1.7
 ```
 Works well against systems using RFC-compliant TCP stack.
 
