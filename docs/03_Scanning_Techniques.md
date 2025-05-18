@@ -79,11 +79,11 @@ nmap -sC -sV -p- -oX example.xml 192.168.1.7
 
 **To convert the XML report to HTML:**
 
-![Xml-Html](/docs/image/XML_to_HTML)
+![Xml-Html](/docs/image/XML_to_HTML.png)
 
 - Local hosted html webpage of name example.html with all the details about the ip address.
 
-![XML-Html](/docs/image/Nmap_HTML)
+![XML-Html](/docs/image/Nmap_HTML.png)
 ```bash
 xsltproc example.xml -o example.html
 ```
@@ -108,25 +108,33 @@ Sends packets with no TCP flags set. Useful for firewall evasion.
 ```bash
 nmap -sN -v -p- 192.168.1.7
 ```
-**-sN: Null Scan**
+`-sN` : Null Scan
 
 No flags → Stealthy
 ✔️ No response = Port open
 ❌ RST = Port closed
 
 ## 8️⃣ Fragmentation Scan (-f)
-Breaks probe packets into tiny fragments to bypass firewalls/IDS.
+- A fragmented scan in Nmap is used for stealth and evasion — it's a technique to bypass firewalls, intrusion detection systems (IDS), or intrusion prevention systems (IPS) that analyze and block suspicious network traffic.
 
 ```bash
 nmap -f -v -p- 192.168.1.7
 ```
 🧩 Obfuscates packet content.
 
-##9️⃣ Custom MTU Scan (--mtu)
-Sets the Maximum Transmission Unit for probes.
+## 9️⃣ Custom MTU Scan (--mtu)
+- Sets the Maximum Transmission Unit for probes.
+- The `--mtu` option sets a custom packet size (Maximum Transmission Unit).
+- It tells Nmap to fragment its packets so each part fits within the MTU size you specify.
+
+**NOTE**
+- It prevents Nmap from sending any packet larger than 16 bytes at all.
+- So instead of sending one full probe (e.g., 60–100 bytes), Nmap fragments it into tiny pieces, each ≤ 16 bytes.
+- **The MTU must be a multiple of 8**
+
 
 ```bash
-nmap --mtu=15 -v -p- 192.168.1.7
+nmap --mtu=16 -v -p- 192.168.1.7
 ```
 **🔬 Helps evade some firewalls with MTU anomalies.**
 
