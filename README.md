@@ -120,8 +120,8 @@ Advanced-Network-Scanning/
 │
 ├── README.md
 ├── docs/
-│   ├── 01_Introduction.md
-│   ├── 02_Tools.md
+│   ├── 01_Introduction
+│   ├── 02_Tools
 │   ├── 03_Scanning_Techniques.md
 │   ├── 04_Bypass_Techniques.md
 │   ├── 05_Scripts_and_Examples.md
