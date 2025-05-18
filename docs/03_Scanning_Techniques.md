@@ -152,6 +152,8 @@ nmap -F -v -sV 192.168.1.7
 **🅿️ No Ping Scan (-Pn)**
 - Skips host discovery. Useful when ICMP is blocked.
 
+![No Ping](/docs/image/No_Ping_Scan.png)
+
 ```bash
 nmap -Pn -v -p80 192.168.1.7
 ```
@@ -159,6 +161,9 @@ nmap -Pn -v -p80 192.168.1.7
 
 **🔁 Ping Scan Only (-sn)**
 Scans for live hosts in a subnet without port scanning.
+
+![PingScan](/docs/image/Ping_Scan_Only.png)
+![PingScan](/docs/image/Ping_Scan_Only_1.png)
 
 ```bash
 nmap -sn -v 192.168.1.0/24
