@@ -10,6 +10,7 @@ This scan uses a full TCP connection (three-way handshake). It is easily detecta
 
 **Metasploitable Machine**
 
+![docs](images/syn_scan.png)
 ```bash
 nmap -sT -p1-65535 -v 192.168.1.7
 -sT: TCP connect scan
