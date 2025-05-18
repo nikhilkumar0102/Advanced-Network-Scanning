@@ -21,7 +21,7 @@ Works well against systems using RFC-compliant TCP stack.
 
 ❌ Doesn't work on Windows machines (non-RFC compliant TCP stack).
 
-## 🎲 2. Decoy Scan (-D)
+## 🎲 2. Decoy Scan (`-D`)
 Generates fake IP addresses as decoys to hide the real source IP of the scanner.
 
 ```bash
@@ -51,7 +51,7 @@ Only works if the spoofed IP can receive replies (i.e., sniff traffic)
 
 ⚠️ Requires access to spoofed network path (advanced).
 
-## 🧑‍💻 5. MAC Spoofing (--spoof-mac)
+## 🧑‍💻 5. MAC Spoofing (`--spoof-mac`)
 Fakes the MAC address sent with packets. Helpful to impersonate known/trusted devices.
 
 ```bash
@@ -62,7 +62,7 @@ nmap --spoof-mac apple 192.168.1.7
 
 🔧 May bypass MAC-based firewall rules or profiling.
 
-## 🛡️ 6. No Ping (-Pn)
+## 🛡️ 6. No Ping (`-Pn`)
 Skips host discovery phase (ICMP echo), useful if ICMP is blocked.
 
 ```bash
@@ -71,7 +71,7 @@ nmap -Pn -v -p80 192.168.1.7
 - Useful when firewall drops ping/echo requests
 - Forces Nmap to assume host is up
 
-## 🎯 7. Source Port Spoofing (--source-port)
+## 🎯 7. Source Port Spoofing (`--source-port`)
 - Spoofs the source port of packets to appear as a trusted service (e.g., DNS or HTTP).
 
 ```bash
@@ -82,7 +82,7 @@ nmap --source-port 53 -Pn -v 192.168.1.7
 
 🧪 Some firewalls allow traffic from known service ports.
 
-## 🔕 8. Null Scan (-sN)
+## 🔕 8. Null Scan (`-sN`)
 - Sends packets with no TCP flags set.
 
 ```bash
@@ -96,7 +96,7 @@ nmap -sN -v -p- 192.168.1.7
 
 **📌 Only works on UNIX-like targets.**
 
-## 🧩 9. Packet Fragmentation (-f)
+## 🧩 9. Packet Fragmentation (`-f`)
 - Splits packets into smaller fragments to evade deep packet inspection (DPI).
 
 ```bash
@@ -104,7 +104,7 @@ nmap -f -v -p- 192.168.1.7
 ```
 Makes it harder for firewalls to reconstruct full packets and inspect them.
 
-## ⚙️ 10. Custom MTU (--mtu)
+## ⚙️ 10. Custom MTU (`--mtu`)
 Sets the Maximum Transmission Unit (MTU) for packet fragmentation.
 
 ```bash
