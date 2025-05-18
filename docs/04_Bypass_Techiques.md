@@ -10,6 +10,7 @@ In secured environments, firewalls and Intrusion Detection Systems (IDS/IPS) may
 
 Xmas scans set **FIN, URG, and PUSH** TCP flags in packets — resembling a "blinking Christmas tree".
 
+![XmasScan](docs/image/Xmas_Scan.png)
 ```bash
 nmap -sX -v 192.168.1.7
 ```
@@ -24,6 +25,7 @@ Works well against systems using RFC-compliant TCP stack.
 ## 🎲 2. Decoy Scan (`-D`)
 Generates fake IP addresses as decoys to hide the real source IP of the scanner.
 
+![Decoy](docs/image/Decoy.png)
 ```bash
 nmap -D RND:10 -v 192.168.1.7
 ```
@@ -48,8 +50,7 @@ nmap -S 192.168.5.10 192.168.1.7
 `-S` : Source IP to spoof
 
 Only works if the spoofed IP can receive replies (i.e., sniff traffic)
-
-⚠️ Requires access to spoofed network path (advanced).
+**⚠️ Requires access to spoofed network path (advanced).**
 
 ## 🧑‍💻 5. MAC Spoofing (`--spoof-mac`)
 Fakes the MAC address sent with packets. Helpful to impersonate known/trusted devices.
