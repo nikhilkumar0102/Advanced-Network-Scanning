@@ -128,10 +128,9 @@ Advanced-Network-Scanning/
 │   ├── 06_DOS_Attacks.md
 │   └── images/               # Screenshots and diagrams
 ├── reports/
-│   ├── example.xml
-│   └── example.html
-└── scripts/
-    └── custom NSE or bash scripts
+    ├── example.xml
+    └── example.html
+
 ```
 ## ⚠️ Legal Disclaimer
 
