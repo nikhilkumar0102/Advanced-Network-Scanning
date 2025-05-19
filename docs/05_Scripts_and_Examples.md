@@ -41,6 +41,10 @@ nmap -p21 --script=ftp* -v 192.168.1.7
 - `ftp-vsftpd-backdoor.nse`: Detect backdoored vsftpd versions
 
 **2️⃣ SSH Scan**
+
+![ssh](/docs/image/Scripts_1SSH.png)
+![ssh](/docs/image/Scripts_2SSH.png)
+![ssh](/docs/image/Scripts_3SSH.png)
 ```bash
 nmap -p22 --script=ssh* -v 192.168.1.7
 ```
@@ -63,10 +67,14 @@ Examples:
 **🔐 SMTP Scan Example**
 Find SMTP Services
 
+![script](/docs/image/Scripts_2.png)
 ```bash
 ls | grep smtp
 ```
-Script-Based Scan
+
+**Script-Based Scan**
+![smtp](/docs/image/Scripts_1smpt)
+
 ```bash
 nmap -p25 --script=smtp* -v 192.168.1.7
 ```
