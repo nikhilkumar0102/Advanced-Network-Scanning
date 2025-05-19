@@ -12,8 +12,9 @@ Use ping to resolve a website/domain to its IP:
 
 ```bash
 ping example.com
-Example output:
+```
 
+Example output:
 nginx
 Copy
 Edit
@@ -106,4 +107,4 @@ No fragmentation	ping -s 2000 -M do 192.168.1.1	Force buffer overflow simulation
 Trial-and-error attack	ping -s 5000 -M do 192.168.1.1	Maximize payload to check resistance
 TTL OS fingerprinting	ping 192.168.1.1	Check TTL in reply to guess OS
 
-🧠 Pro Tip: Always perform DoS simulations in isolated environments like a VirtualBox lab or test subnet.
+> 🧠 **Pro Tip**: Always perform DoS simulations in isolated environments like a VirtualBox lab or test subnet.
