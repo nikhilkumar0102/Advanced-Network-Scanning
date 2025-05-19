@@ -73,7 +73,8 @@ ls | grep smtp
 ```
 
 **Script-Based Scan**
-![smtp](/docs/image/Scripts_1smpt)
+
+![smtp](/docs/image/Scripts_1smtp.png)
 
 ```bash
 nmap -p25 --script=smtp* -v 192.168.1.7
@@ -99,6 +100,8 @@ Search scripts by keyword:
 ls /usr/share/nmap/scripts | grep ssh
 ```
 Check script arguments:
+
+![help](/docs/image/help.png)
 
 ```bash
 nmap --script-help=ftp-anon
