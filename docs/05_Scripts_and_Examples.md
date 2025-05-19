@@ -30,7 +30,7 @@ nmap -p21 --script=ftp* -v 192.168.1.7
 
 **Example scripts:**
 
-- ftp-anon.nse: Check for anonymous login
+  - ftp-anon.nse: Check for anonymous login
 
 - ftp-vsftpd-backdoor.nse: Detect backdoored vsftpd versions
 
