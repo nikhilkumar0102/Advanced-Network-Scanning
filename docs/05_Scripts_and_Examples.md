@@ -11,6 +11,7 @@ Nmap scripts are located in:
 ```bash
 /usr/share/nmap/scripts/
 ```
+![ScriptList](/docs/image/Scripts.png)
 **All scripts end with `.nse`.**
 
 ## 📜 Running All Default Scripts
@@ -23,16 +24,21 @@ nmap -sC -sV -v 192.168.1.7
 
 ## ⚙️ Manual NSE Script Examples
 **1️⃣ FTP Vulnerability Scan**
+
+![FTPScript](/docs/image/Scripts_3FTP.png)
+![FTPScript](/docs/image/Scripts_4FTP.png)
 ```bash
 nmap -p21 --script=ftp* -v 192.168.1.7
 ```
 - Scans FTP-related vulnerabilities and configurations
 
 **Example scripts:**
+![FTP](/docs/image/Scripts_1.png)
 
-  - ftp-anon.nse: Check for anonymous login
 
-- ftp-vsftpd-backdoor.nse: Detect backdoored vsftpd versions
+- `ftp-anon.nse` : Check for anonymous login
+
+- `ftp-vsftpd-backdoor.nse`: Detect backdoored vsftpd versions
 
 **2️⃣ SSH Scan**
 ```bash
