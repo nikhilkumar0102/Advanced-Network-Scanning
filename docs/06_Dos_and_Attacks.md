@@ -8,23 +8,23 @@ This section demonstrates basic **Denial of Service (DoS)** techniques using lar
 
 ## 🔍 Step 1: Resolve IP Address of Target
 
-Use ping to resolve a website/domain to its IP:
+Use ping to resolve a website/domain to its IP:(`Nmap Scan-me website`)
 
 ```bash
-ping example.com
+ping scanme.nmap.org
 ```
 
 Example output:
 ```bash
-PING example.com (93.184.216.34): 56 data bytes
+PING example.com (45.33.32.156): 56 data bytes
 ```
-- Now use the IP (e.g., 93.184.216.34) for further tests.
+- Now use the IP (e.g., 45.33.32.156) for further tests.
 
 ## 📦 Step 2: ICMP Packet Flood with Custom Size
 Basic command to test buffer size handling:
 
 ```bash
-ping 192.168.1.1 -s 80
+ping scanme.nmap.org -s 80
 ```
 - `-s` 80: Send 80-byte ICMP packets
 
@@ -33,16 +33,16 @@ Increasing this size sends more data in a single ping.
 **🔁 Try increasing the size gradually to find the system's limit:**
 
 ```bash
-ping 192.168.1.1 -s 1000
-ping 192.168.1.1 -s 2500
-ping 192.168.1.1 -s 5000
+ping scanme.nmap.org -s 1000
+ping scanme.nmap.org -s 2500
+ping scanme.nmap.org -s 5000
 ```
 
 ## 🚫 Step 3: Prevent Packet Fragmentation with `-M do`
 Some systems fragment large packets to handle them better. To simulate DoS more aggressively, you can prevent fragmentation:
 
 ```bash
-ping 192.168.1.1 -s 2000 -M do
+ping scanme.nmap.org -s 2000 -M do
 ```
 - `-M do` : Prevents fragmentation
 
@@ -51,10 +51,10 @@ ping 192.168.1.1 -s 2000 -M do
 ## 🧪 Step 4: Trial-and-Error for Max Packet Size
 
 Continue increasing the size with -M do:
-
+![Dos](/docs/image/Dos5)
 ```bash
-ping 192.168.1.1 -s 5000 -M do
-ping 192.168.1.1 -s 10000 -M do
+ping scanme.nmap.org -s 1465 -M do
+ping 192.168.1.1 -s 1464 -M do
 ```
 ⛔ If the system becomes unresponsive or replies stop, you may have hit the packet threshold or caused disruption.
 
