@@ -127,9 +127,7 @@ Advanced-Network-Scanning/
 │   ├── 05_Scripts_and_Examples.md
 │   ├── 06_DOS_Attacks.md
 │   └── images/               # Screenshots and diagrams
-├── reports/
-    ├── example.xml
-    └── example.html
+
 
 ```
 ## ⚠️ Legal Disclaimer
