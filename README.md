@@ -1,10 +1,10 @@
-# 🔍 Advanced Network Scanning
+#  Advanced Network Scanning
 
 A comprehensive guide to advanced network scanning and reconnaissance using tools like **Nmap**, **Netdiscover**, and related utilities. This repository is designed for cybersecurity students, ethical hackers, penetration testers, and network security analysts who want to explore both standard and stealthy scanning methods, service enumeration, firewall evasion, and reporting techniques.
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 - [Introduction](#-introduction)
 - [Tools Used](#️-tools-used)
@@ -142,4 +142,5 @@ Contributions are welcome! Feel free to:
 - Improve documentation  
 - Include screenshots  
 - Suggest best practices
+
 
