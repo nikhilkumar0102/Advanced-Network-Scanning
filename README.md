@@ -6,19 +6,19 @@ A comprehensive guide to advanced network scanning and reconnaissance using tool
 
 ## 📑 Table of Contents
 
-- [📌 Introduction](#-introduction)
-- [🛠️ Tools Used](#️-tools-used)
-- [🚀 Getting Started](#-getting-started)
-- [🔧 Scanning Techniques](#-scanning-techniques)
-- [🧱 Firewall Bypass Methods](#-firewall-bypass-methods)
-- [📜 Script Usage & Output](#-script-usage--output)
-- [🛡️ Denial of Service Tests](#-denial-of-service-tests)
-- [📂 Repository Structure](#-repository-structure)
-- [⚠️ Legal Disclaimer](#️-legal-disclaimer)
+- [Introduction](#-introduction)
+- [Tools Used](#️-tools-used)
+- [Getting Started](#-getting-started)
+- [Scanning Techniques](#-scanning-techniques)
+- [Firewall Bypass Methods](#-firewall-bypass-methods)
+- [Script Usage & Output](#-script-usage--output)
+- [Denial of Service Tests](#-denial-of-service-tests)
+- [Repository Structure](#-repository-structure)
+- [Legal Disclaimer](#️-legal-disclaimer)
 
 ---
 
-## 📌 Introduction
+## Introduction
 
 Network scanning is a fundamental phase of penetration testing and ethical hacking. This project explores:
 - Host discovery
@@ -30,7 +30,7 @@ Network scanning is a fundamental phase of penetration testing and ethical hacki
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 | Tool        | Purpose                                 |
 |-------------|------------------------------------------|
@@ -41,7 +41,7 @@ Network scanning is a fundamental phase of penetration testing and ethical hacki
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 To use this repository:
 
@@ -70,10 +70,10 @@ The reposity covers:
 - Subnet-wide scans `(-sn)`
 
 Detailed documentation is in:
-📄 [docs/03_Scanning_Techniques.md](docs/03_Scanning_Techniques.md)
+ [docs/03_Scanning_Techniques.md](docs/03_Scanning_Techniques.md)
 
 
-## 🧱 Firewall Bypass Methods
+##  Firewall Bypass Methods
 Learn how to evade detection by:
 
 -   Randomizing hosts `(--randomize-hosts)`
@@ -84,9 +84,9 @@ Learn how to evade detection by:
 -    Fragmentation and null scans
 
 See:
-📄 [docs/04_Bypass_Techniques.md](docs/04_Bypass_Techniques.md)
+ [docs/04_Bypass_Techniques.md](docs/04_Bypass_Techniques.md)
 
-## 📜 Script Usage & Output
+##  Script Usage & Output
 
 - Default and custom Nmap scripts `(.nse)`
 - FTP, SMTP enumeration
@@ -94,7 +94,7 @@ See:
 - Output in XML `(-oX)` and conversion to HTML using `xsltproc`
 
 See:
-📄 [docs/05_Scripts_and_Examples.md](docs/05_Scripts_and_Examples.md)
+ [docs/05_Scripts_and_Examples.md](docs/05_Scripts_and_Examples.md)
 
 **Example**
 ```bash
@@ -102,16 +102,16 @@ See:
    xsltproc example.xml -o example.html
 ```
 
-## 🛡️ Denial of Service Tests
+##  Denial of Service Tests
 Test ICMP-based DoS resistance:
 - Packet size manipulation `(ping -s 1000)`
 - Preventing fragmentation `(-M do)`
 - TTL analysis for OS fingerprinting
 
 See:
-📄 [docs/06_DOS_Attacks.md](docs/06_Dos_and_Attacks.md)
+ [docs/06_DOS_Attacks.md](docs/06_Dos_and_Attacks.md)
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ## Repository Structure
 
@@ -130,15 +130,16 @@ Advanced-Network-Scanning/
 
 
 ```
-## ⚠️ Legal Disclaimer
+##  Legal Disclaimer
 
 This repository is intended for educational and ethical penetration testing purposes only.  
 Unauthorized scanning or attacks on networks you do not own or have explicit permission to test is illegal and unethical.  
 Always ensure you have proper authorization before performing any network reconnaissance.
 
-## 🧠 **Contributions**  
+##  **Contributions**  
 Contributions are welcome! Feel free to:  
 - Add new techniques  
 - Improve documentation  
 - Include screenshots  
 - Suggest best practices
+
